@@ -1,0 +1,44 @@
+class Media #capitalized since all objects are constants
+
+	def set_title=(title)
+		@title = title
+	end
+
+	def get_title
+		return @title
+	end
+
+	def set_artist=(artist_name)
+		@artist_name = artist_name
+	end
+
+	def get_artist
+		return @artist_name
+	end
+end
+
+class Song < Media
+	def about_song
+		return "#{@title} is performed by #{@artist_name}."
+	end
+end
+
+class Book < Media
+	def about_book
+		return "#{title} was written by #{@artist_name}."
+	end
+end
+
+class Movie <Media
+	def about_movie
+		return "#{@title} features #{artist_name}."
+	end
+end
+
+my_song = Song.new
+my_song.set_artist = "Misty Edwards"
+my_song.set_title = "You Won't Relent"
+
+puts my_song.get_title
+puts my_song.get_artist
+puts my_song.about_song
